@@ -102,28 +102,24 @@ function App() {
               </div>
               <div>
                 <span className="font-extrabold text-lg md:text-xl tracking-wide block text-white group-hover:text-amber-400 transition-colors">
-                  SMK ASAJAYA
+                  SEK.MEN.KEB ASAJAYA
                 </span>
                 <span className="text-[9px] text-amber-500 font-semibold block tracking-widest uppercase">
-                  ESTABLISHED FOR EXCELLENCE
+                  ASAL DARI ANAK BENIH BAIK
                 </span>
               </div>
             </div>
 
-            {/* Navigasi Utama Skrin Besar */}
+            {/* Navigasi Utama Skrin Besar - Diperbaiki menggunakan pautan manual */}
             <div className="hidden lg:flex items-center space-x-8">
-              {['Utama', 'Profil', 'Perutusan', 'Akademik', 'Hubungi'].map((menu, i) => (
-                <a 
-                  key={i}
-                  href={`#${menu.toLowerCase()}`} 
-                  className="text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-amber-400 transition-colors duration-200 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-amber-400 after:transition-all hover:after:w-full"
-                >
-                  {menu}
-                </a>
-              ))}
+              <a href="#utama" className="text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-amber-400 transition-colors duration-200 relative py-1">Utama</a>
+              <a href="#profil" className="text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-amber-400 transition-colors duration-200 relative py-1">Profil</a>
+              <a href="#perutusan" className="text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-amber-400 transition-colors duration-200 relative py-1">Perutusan</a>
+              <a href="#berita" className="text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-amber-400 transition-colors duration-200 relative py-1">Berita</a>
+              <a href="#hubungi" className="text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-amber-400 transition-colors duration-200 relative py-1">Hubungi</a>
               
               <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider shadow-md hover:shadow-lg transition-all duration-300 flex items-center space-x-2 active:scale-95">
-                <span>Portal Pelajar</span>
+                <span>Portal Guru</span>
                 <ExternalLink className="h-3.5 w-3.5" />
               </button>
             </div>
@@ -140,22 +136,17 @@ function App() {
           </div>
         </div>
 
-        {/* Menu Mobil Terbuka */}
+        {/* Menu Mobil Terbuka - Diperbaiki menggunakan pautan manual */}
         {isMenuOpen && (
           <div className="lg:hidden bg-slate-950/98 backdrop-blur-xl border-t border-slate-900 px-6 pt-4 pb-8 space-y-3 shadow-2xl">
-            {['Utama', 'Profil', 'Perutusan', 'Akademik', 'Hubungi'].map((menu, i) => (
-              <a 
-                key={i}
-                href={`#${menu.toLowerCase()}`} 
-                onClick={() => setIsMenuOpen(false)}
-                className="block py-3 px-4 text-slate-300 hover:bg-slate-900 hover:text-amber-400 text-sm font-bold uppercase tracking-wider rounded-xl transition duration-200"
-              >
-                {menu}
-              </a>
-            ))}
+            <a href="#utama" onClick={() => setIsMenuOpen(false)} className="block py-3 px-4 text-slate-300 hover:bg-slate-900 hover:text-amber-400 text-sm font-bold uppercase tracking-wider rounded-xl transition duration-200">Utama</a>
+            <a href="#profil" onClick={() => setIsMenuOpen(false)} className="block py-3 px-4 text-slate-300 hover:bg-slate-900 hover:text-amber-400 text-sm font-bold uppercase tracking-wider rounded-xl transition duration-200">Profil</a>
+            <a href="#perutusan" onClick={() => setIsMenuOpen(false)} className="block py-3 px-4 text-slate-300 hover:bg-slate-900 hover:text-amber-400 text-sm font-bold uppercase tracking-wider rounded-xl transition duration-200">Perutusan</a>
+            <a href="#berita" onClick={() => setIsMenuOpen(false)} className="block py-3 px-4 text-slate-300 hover:bg-slate-900 hover:text-amber-400 text-sm font-bold uppercase tracking-wider rounded-xl transition duration-200">Berita</a>
+            <a href="#hubungi" onClick={() => setIsMenuOpen(false)} className="block py-3 px-4 text-slate-300 hover:bg-slate-900 hover:text-amber-400 text-sm font-bold uppercase tracking-wider rounded-xl transition duration-200">Hubungi</a>
             <div className="pt-4">
               <button className="w-full bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 py-3.5 rounded-xl text-xs font-black uppercase tracking-wider shadow-lg text-center">
-                Portal Pelajar
+                Portal Guru
               </button>
             </div>
           </div>
@@ -185,7 +176,7 @@ function App() {
               Membangun Legasi, <br />
               Menginspirasi <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 font-extrabold">
-                Generasi Bistari
+                Generasi Bestari
               </span>
             </h1>
             
@@ -198,7 +189,8 @@ function App() {
                 <span>Profil Korporat</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#akademik" className="bg-slate-900/60 hover:bg-slate-900 text-slate-300 px-8 py-4 rounded-2xl text-xs font-bold uppercase tracking-wider border border-slate-800 hover:border-slate-700 transition-all duration-300 text-center backdrop-blur-sm">
+              {/* Diperbaiki href di bawah menjadi huruf kecil #berita */}
+              <a href="#berita" className="bg-slate-900/60 hover:bg-slate-900 text-slate-300 px-8 py-4 rounded-2xl text-xs font-bold uppercase tracking-wider border border-slate-800 hover:border-slate-700 transition-all duration-300 text-center backdrop-blur-sm">
                 Berita & Makluman
               </a>
             </div>
@@ -206,9 +198,7 @@ function App() {
 
           {/* Kolum Gambar Potret Estetik */}
           <div className="lg:col-span-5 relative w-full max-w-md mx-auto">
-            {/* Soft decorative shadow frame */}
             <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 to-emerald-600/10 rounded-3xl transform rotate-2 scale-102 opacity-40 blur-sm"></div>
-            
             <div className="relative bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800">
               <img 
                 src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800" 
@@ -220,7 +210,7 @@ function App() {
               {/* Motto Banner Minimalis */}
               <div className="absolute bottom-0 inset-x-0 p-8 text-center bg-slate-950/70 backdrop-blur-sm border-t border-slate-900">
                 <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block mb-1">Motto Utama</span>
-                <p className="text-slate-100 font-extrabold text-lg tracking-widest">USAHA • JAYA • BAKTI</p>
+                <p className="text-slate-100 font-extrabold text-lg tracking-widest">BERAZAM • BERUSAHA • BERJAYA</p>
               </div>
             </div>
           </div>
@@ -233,10 +223,10 @@ function App() {
         <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.03)] p-8 md:p-10 border border-slate-100">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y-0 divide-x-0 sm:divide-x sm:divide-slate-100">
             {[
-              { label: "Jumlah Pelajar", value: "1,100+", sub: "Tingkatan 1 - 5", color: "text-slate-950" },
-              { label: "Tenaga Pengajar", value: "100+", sub: "Pendidik Dedikasi", color: "text-slate-950" },
-              { label: "Aliran Pengajian", value: "2 Teras", sub: "Sains & Sastera", color: "text-slate-950" },
-              { label: "Pencapaian SPM", value: "Cemerlang", sub: "Lonjakan GPK", color: "text-emerald-700" }
+              { label: "Jumlah Pelajar", value: "1,200+", sub: "Tingkatan 1 - 6", color: "text-slate-950" },
+              { label: "Tenaga Pengajar", value: "90+", sub: "Pendidik Berdedikasi", color: "text-slate-950" },
+              { label: "Aliran Persekolahan", value: "3 Kategori", sub: "Perdana | Pra-U | PPKI", color: "text-slate-950" },
+              { label: "Pencapaian SPM", value: "2025", sub: "5.30", color: "text-emerald-700" }
             ].map((stat, i) => (
               <div key={i} className="flex flex-col items-center text-center p-2 first:pt-2 sm:pt-2">
                 <span className={`text-3xl font-black ${stat.color} tracking-tight`}>
@@ -267,7 +257,6 @@ function App() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
           {/* Kad Visi */}
           <div className="group bg-white rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100/80 flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-bl-full pointer-events-none"></div>
@@ -318,7 +307,6 @@ function App() {
               <span>Komitmen Berintegriti</span>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -328,7 +316,6 @@ function App() {
         <div className="absolute top-1/2 left-0 w-[450px] h-[450px] bg-emerald-600/5 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          
           {/* Potret Pengetua Premium */}
           <div className="lg:col-span-5 relative max-w-sm mx-auto w-full">
             <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 to-transparent rounded-2xl transform rotate-3 scale-102 opacity-30 blur-sm"></div>
@@ -339,8 +326,8 @@ function App() {
                 className="w-full h-[400px] object-cover opacity-90 object-top hover:scale-101 transition duration-300"
               />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-6 text-center">
-                <h4 className="text-slate-100 font-extrabold text-base">Puan Hajah Halimah binti Kassim</h4>
-                <p className="text-[10px] text-amber-500 font-semibold uppercase tracking-wider mt-1">Pengetua Cemerlang SMK Asajaya</p>
+                <h4 className="text-slate-100 font-extrabold text-base">REMY SYARMILA BINTI MOHAMED SEBLI</h4>
+                <p className="text-[10px] text-amber-500 font-semibold uppercase tracking-wider mt-1">Pengetua SMK Asajaya</p>
               </div>
             </div>
           </div>
@@ -375,12 +362,11 @@ function App() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* 6. SECTION PENGUMUMAN & BERITA - Minimalist News Deck */}
-      <section id="akademik" className="bg-white py-24 border-b border-slate-100">
+      {/* 6. SECTION PENGUMUMAN & BERITA - Diperbaiki ID menjadi id="berita" */}
+      <section id="berita" className="bg-white py-24 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header Berita */}
@@ -391,7 +377,7 @@ function App() {
               <div className="h-1 w-12 bg-amber-500 mt-3 rounded-full mx-auto md:mx-0"></div>
             </div>
             
-            {/* Penapis Berita (Tabs) - Minimalist Outlines */}
+            {/* Penapis Berita (Tabs) */}
             <div className="flex flex-wrap gap-1.5 mt-8 md:mt-0 justify-center">
               {['semua', 'akademik', 'kokurikulum', 'pembangunan'].map((tab) => (
                 <button
@@ -455,7 +441,7 @@ function App() {
         </div>
       </section>
 
-      {/* 7. SECTION INTERAKTIF NEWSLETTER - Premium Contrast Section */}
+      {/* 7. SECTION INTERAKTIF NEWSLETTER */}
       <section className="bg-slate-950 text-white py-20 border-t border-slate-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <div className="inline-flex items-center space-x-1.5 bg-amber-500/10 px-3 py-1 rounded-full text-[9px] text-amber-500 font-black uppercase tracking-widest mb-2">
@@ -522,7 +508,7 @@ function App() {
               <li><a href="#utama" className="hover:text-amber-400 flex items-center space-x-1 transition-colors"><span>›</span> <span>Laman Utama</span></a></li>
               <li><a href="#profil" className="hover:text-amber-400 flex items-center space-x-1 transition-colors"><span>›</span> <span>Profil Korporat</span></a></li>
               <li><a href="#perutusan" className="hover:text-amber-400 flex items-center space-x-1 transition-colors"><span>›</span> <span>Perutusan Pengetua</span></a></li>
-              <li><a href="#akademik" className="hover:text-amber-400 flex items-center space-x-1 transition-colors"><span>›</span> <span>Pusat Berita & Aktiviti</span></a></li>
+              <li><a href="#berita" className="hover:text-amber-400 flex items-center space-x-1 transition-colors"><span>›</span> <span>Pusat Berita & Aktiviti</span></a></li>
               <li><button className="hover:text-amber-400 flex items-center space-x-1 transition-colors text-left focus:outline-none"><span>›</span> <span>e-Sumbangan PIBG</span></button></li>
             </ul>
           </div>
@@ -533,7 +519,7 @@ function App() {
             <ul className="space-y-4 text-xs text-slate-400 font-light">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-4.5 w-4.5 text-amber-500 shrink-0 mt-0.5" />
-                <span className="leading-relaxed">Jalan SMK Asajaya, 94600 Asajaya, Samarahan, Sarawak, Malaysia.</span>
+                <span className="leading-relaxed">Jalan SMK Asajaya, 94600 Asajaya, Sarawak, Malaysia.</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-amber-500 shrink-0" />
@@ -548,11 +534,11 @@ function App() {
 
         </div>
 
-        {/* Hak Cipta */}
+        {/* Hak Cipta - Diperbaiki kod yang terpotong */}
         <div className="bg-slate-950 border-t border-slate-900/60 py-8 text-center text-[10px] text-slate-500 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p>© {new Date().getFullYear()} SMK Asajaya. Hak Cipta Terpelihara.</p>
           <p className="flex items-center space-x-1">
-            <span className="font-medium">Reka bentuk web editorial minimalis menggunakan React & Tailwind</span>
+            <span className="font-medium">Reka bentuk web menggunakan React & Tailwind CSS</span>
             <Heart className="h-3 w-3 text-red-600 fill-red-600" />
           </p>
         </div>
