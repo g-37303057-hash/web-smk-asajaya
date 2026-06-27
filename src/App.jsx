@@ -74,21 +74,45 @@ function App() {
     }
   ];
 
-  // Data Spesifik Aliran Persekolahan (Perdana, Pra-U, PPKI)
+  // Data Spesifik Aliran Persekolahan berserta Gambar Profil (Avatar) & Gambar Aktiviti
   const streamDetails = {
     perdana: {
-      title: "Arus Perdana",
+      title: "Aliran Perdana",
       sub: "Tingkatan 1 hingga Tingkatan 5",
-      desc: "Menyediakan pendidikan standard berkualiti tinggi berpandukan Kurikulum Standard Sekolah Menengah (KSSM) merangkumi pakej SPM STEM A, STEM B, dan STEM C yang berdaya saing tinggi.",
+      desc: "Menyediakan pendidikan standard berkualiti tinggi berpandukan Kurikulum Standard Sekolah Menengah (KSSM) merangkumi bidang sains tulen, sastera, dan aliran vokasional.",
       motto: "Peneraju Ilmu & Kecemerlangan Akademik",
       structure: {
-        penyelaras: { nama: "ISMAIL BIN AHMAD", jawatan: "Penolong Kanan Pentadbiran" },
-        setiausaha: { nama: "NURUL HAYATUL AZWA BINTI HJ BOLHASSAN", jawatan: "Setiausaha Kurikulum" },
+        penyelaras: { 
+          nama: "Cikgu Ahmad Fauzi bin Razali", 
+          jawatan: "Penyelaras Aliran Perdana",
+          avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150"
+        },
+        setiausaha: { 
+          nama: "Cikgu Dayang Mastura binti Awang", 
+          jawatan: "Setiausaha Kurikulum",
+          avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150"
+        },
         jawatankuasa: [
-          { nama: "FAKHRUL RAZI BIN SUNIP", peranan: "Ketua Bidang Bahasa" },
-          { nama: "AWANG KAMARUDIN BIN AWANG JAPOT", peranan: "Ketua Bidang Sains & Matematik" },
-          { nama: "MASTURI BINTI TANI", peranan: "Ketua Bidang Kemanusiaan" },
-          { nama: "MOHD FAKRUL RADZI BIN ABU HASAN", peranan: "Ketua Bidang Teknikal & Vokasional" }
+          { 
+            nama: "Cikgu Zunika binti Ali", 
+            peranan: "Ketua Bidang Bahasa",
+            avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150"
+          },
+          { 
+            nama: "Cikgu Mohd Jeffrey bin Salleh", 
+            peranan: "Ketua Bidang Sains & Matematik",
+            avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150"
+          },
+          { 
+            nama: "Cikgu Norhayati binti Hassan", 
+            peranan: "Ketua Bidang Sains Sosial",
+            avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150"
+          },
+          { 
+            nama: "Cikgu Robert anak James", 
+            peranan: "Ketua Bidang Teknikal & Vokasional",
+            avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150"
+          }
         ]
       },
       images: [
@@ -103,12 +127,32 @@ function App() {
       desc: "Mempersiapkan pelajar lepasan SPM untuk melangkah ke institusi pengajian tinggi melalui peperiksaan Sijil Tinggi Persekolahan Malaysia (STPM) dengan bimbingan pensyarah berpengalaman.",
       motto: "Gerbang Emas Menuju Menara Gading",
       structure: {
-        penyelaras: { nama: "Cikgu Dr. Hajah Noraini binti Ahmad", jawatan: "Penyelaras Tingkatan 6" },
-        setiausaha: { nama: "Cikgu Wong Siew Ling", jawatan: "Setiausaha Peperiksaan STPM" },
+        penyelaras: { 
+          nama: "Cikgu Dr. Hajah Noraini binti Ahmad", 
+          jawatan: "Penyelaras Tingkatan 6",
+          avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150"
+        },
+        setiausaha: { 
+          nama: "Cikgu Wong Siew Ling", 
+          jawatan: "Setiausaha Peperiksaan STPM",
+          avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150"
+        },
         jawatankuasa: [
-          { nama: "Cikgu Abang Zulkifli bin Abang Ismail", peranan: "Ketua Unit Hal Ehwal Murid (HEM)" },
-          { nama: "Cikgu Sarimah binti Bujang", peranan: "Ketua Unit Kokurikulum Tingkatan 6" },
-          { nama: "Cikgu Tan Kok Wee", peranan: "Ketua Unit Kerja Kursus & Penyelidikan" }
+          { 
+            nama: "Cikgu Abang Zulkifli bin Abang Ismail", 
+            peranan: "Ketua Unit Hal Ehwal Murid (HEM)",
+            avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150"
+          },
+          { 
+            nama: "Cikgu Sarimah binti Bujang", 
+            peranan: "Ketua Unit Kokurikulum Tingkatan 6",
+            avatar: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=150"
+          },
+          { 
+            nama: "Cikgu Tan Kok Wee", 
+            peranan: "Ketua Unit Kerja Kursus & Penyelidikan",
+            avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=150"
+          }
         ]
       },
       images: [
@@ -123,12 +167,32 @@ function App() {
       desc: "Menyediakan sokongan dan rancangan pendidikan berorientasikan kemahiran hidup dan pengurusan kendiri bagi membolehkan murid berkeperluan pendidikan khas (MBPK) berdikari.",
       motto: "Keupayaan Di Sebalik Kelainan",
       structure: {
-        penyelaras: { nama: "Cikgu Fatimah binti Ibrahim", jawatan: "Penyelaras Utama PPKI" },
-        setiausaha: { nama: "Cikgu Mohd Syazwan bin Hadi", jawatan: "Setiausaha Kebajikan MBPK" },
+        penyelaras: { 
+          nama: "Cikgu Fatimah binti Ibrahim", 
+          jawatan: "Penyelaras Utama PPKI",
+          avatar: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=150"
+        },
+        setiausaha: { 
+          nama: "Cikgu Mohd Syazwan bin Hadi", 
+          jawatan: "Setiausaha Kebajikan MBPK",
+          avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150"
+        },
         jawatankuasa: [
-          { nama: "Cikgu Siti Aminah binti Yusuf", peranan: "Penyelia Bengkel Kemahiran Hidup" },
-          { nama: "Puan Catherine anak Jamil", peranan: "Pembantu Pengurusan Murid (PPM)" },
-          { nama: "Puan Norizan binti Seman", peranan: "Pembantu Pengurusan Murid (PPM)" }
+          { 
+            nama: "Cikgu Siti Aminah binti Yusuf", 
+            peranan: "Penyelia Bengkel Kemahiran Hidup",
+            avatar: "https://images.unsplash.com/photo-1594744803329-e58b31de215f?auto=format&fit=crop&q=80&w=150"
+          },
+          { 
+            nama: "Puan Catherine anak Jamil", 
+            peranan: "Pembantu Pengurusan Murid (PPM)",
+            avatar: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&q=80&w=150"
+          },
+          { 
+            nama: "Puan Norizan binti Seman", 
+            peranan: "Pembantu Pengurusan Murid (PPM)",
+            avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=150"
+          }
         ]
       },
       images: [
@@ -164,10 +228,24 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             
-            {/* Logo & Nama Sekolah */}
+            {/* Logo & Nama Sekolah - Diperbaharui dengan Logo Imej & Fallback */}
             <div className="flex items-center space-x-3.5 group cursor-pointer">
-              <div className="bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 p-2.5 rounded-2xl text-slate-950 font-bold shadow-lg shadow-amber-500/10 transition-transform duration-500 group-hover:scale-105">
-                <GraduationCap className="h-6 w-6" />
+              <div className="relative w-12 h-12 bg-gradient-to-br from-slate-900 to-slate-800 p-1 rounded-2xl border border-slate-700 shadow-lg shadow-amber-500/5 transition-transform duration-500 group-hover:scale-105 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/logo-smk-asajaya.png" 
+                  alt="Logo SMK Asajaya" 
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    // Jika fail logo tiada, sorokkan imej dan tunjukkan lencana fallback di bawah
+                    e.target.style.display = 'none';
+                    if (e.target.nextSibling) {
+                      e.target.nextSibling.style.display = 'flex';
+                    }
+                  }}
+                />
+                <div className="hidden w-full h-full flex items-center justify-center text-amber-400 bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 rounded-xl p-1.5 text-slate-950">
+                  <GraduationCap className="h-6 w-6" />
+                </div>
               </div>
               <div>
                 <span className="font-extrabold text-lg md:text-xl tracking-wide block text-white group-hover:text-amber-400 transition-colors">
@@ -379,7 +457,7 @@ function App() {
         </div>
       </section>
 
-      {/* SEKSYEN BAHARU: ALIRAN PERSEKOLAHAN (PERDANA, PRA-U, PPKI) INTERAKTIF */}
+      {/* SEKSYEN ALIRAN PERSEKOLAHAN (PERDANA, PRA-U, PPKI) INTERAKTIF */}
       <section className="py-24 bg-slate-100/60 border-t border-slate-200/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -409,11 +487,11 @@ function App() {
                   <GraduationCap className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-950 group-hover:text-emerald-800 transition-colors">Arus Perdana</h3>
+                  <h3 className="text-xl font-bold text-slate-950 group-hover:text-emerald-800 transition-colors">Aliran Perdana</h3>
                   <p className="text-xs text-amber-600 font-bold uppercase tracking-widest mt-1">Tingkatan 1 - Tingkatan 5</p>
                 </div>
                 <p className="text-slate-500 text-sm leading-relaxed font-light line-clamp-3">
-                  Menawarkan kurikulum perdana KSSM merangkumi pakej SPM STEM A, STEM B, dan STEM C yang berdaya saing tinggi.
+                  Menawarkan kurikulum perdana KSSM merangkumi aliran Sains Tulen, Sastera Sosial, dan mata pelajaran kemahiran berdaya saing tinggi.
                 </p>
               </div>
               <div className="pt-8 flex items-center justify-between text-xs font-bold text-emerald-800 uppercase tracking-widest">
@@ -433,7 +511,7 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-500 transition-colors">Pra-Universiti</h3>
-                  <p className="text-xs text-amber-600 font-bold uppercase tracking-widest mt-1">Tingkatan 6 (Sastera)</p>
+                  <p className="text-xs text-amber-600 font-bold uppercase tracking-widest mt-1">Tingkatan 6 (Sains & Seni)</p>
                 </div>
                 <p className="text-slate-500 text-sm leading-relaxed font-light line-clamp-3">
                   Persediaan mantap ke peringkat menara gading berlandaskan sistem modular peperiksaan STPM dan modul kokurikulum yang berimpak tinggi.
@@ -459,7 +537,7 @@ function App() {
                   <p className="text-xs text-amber-600 font-bold uppercase tracking-widest mt-1">Pendidikan Khas Integrasi</p>
                 </div>
                 <p className="text-slate-500 text-sm leading-relaxed font-light line-clamp-3">
-                  Peneraju sokongan holo-terapeutik dan program keusahawanan bakeri berciri inklusif bagi mendidik murid berkeperluan khas secara kendiri.
+                  Peneraju sokongan holo-terapeutik dan program keusahawanan tani berciri inklusif bagi mendidik murid berkeperluan khas secara kendiri.
                 </p>
               </div>
               <div className="pt-8 flex items-center justify-between text-xs font-bold text-emerald-800 uppercase tracking-widest">
@@ -472,7 +550,7 @@ function App() {
         </div>
       </section>
 
-      {/* MODAL INTERAKTIF: CARTA ORGANISASI & GALERI ALIRAN */}
+      {/* MODAL INTERAKTIF: CARTA ORGANISASI DENGAN GAMBAR PROFIL & GALERI ALIRAN */}
       {selectedStream && (
         <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md">
           <div className="relative bg-white rounded-3xl max-w-4xl w-full shadow-2xl overflow-hidden border border-slate-200/80 animate-in fade-in zoom-in-95 duration-300">
@@ -502,7 +580,7 @@ function App() {
                 </p>
               </div>
 
-              {/* Carta Organisasi Visual (HTML & CSS) */}
+              {/* Carta Organisasi Visual dengan Gambar Profil */}
               <div className="space-y-6">
                 <div className="flex items-center space-x-2 text-slate-950 border-b border-slate-100 pb-3">
                   <Users className="h-5 w-5 text-emerald-800" />
@@ -512,11 +590,26 @@ function App() {
                 <div className="flex flex-col items-center space-y-6 pt-4">
                   
                   {/* Penyelaras (Peringkat Teratas) */}
-                  <div className="bg-slate-950 border-2 border-amber-500 rounded-2xl p-4 w-full max-w-xs text-center shadow-lg relative">
+                  <div className="bg-slate-950 border-2 border-amber-500 rounded-2xl p-5 w-full max-w-xs text-center shadow-lg relative flex flex-col items-center">
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-slate-950 text-[9px] font-black uppercase tracking-widest px-3 py-0.5 rounded-full">
                       Penyelaras
                     </div>
-                    <span className="font-extrabold text-sm text-slate-100 block mt-1">
+                    {/* Gambar Profil Penyelaras */}
+                    <div className="w-16 h-16 rounded-full border-2 border-amber-500 overflow-hidden mb-3 bg-slate-800 shadow-md">
+                      <img 
+                        src={streamDetails[selectedStream].structure.penyelaras.avatar} 
+                        alt={streamDetails[selectedStream].structure.penyelaras.nama}
+                        className="w-full h-full object-cover object-top"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      <div className="hidden w-full h-full flex items-center justify-center text-slate-400 bg-slate-800">
+                        <User className="h-6 w-6" />
+                      </div>
+                    </div>
+                    <span className="font-extrabold text-sm text-slate-100 block">
                       {streamDetails[selectedStream].structure.penyelaras.nama}
                     </span>
                     <span className="text-[10px] text-amber-500 font-bold uppercase tracking-wider block mt-0.5">
@@ -528,11 +621,26 @@ function App() {
                   <div className="h-6 w-0.5 bg-slate-200"></div>
 
                   {/* Setiausaha */}
-                  <div className="bg-emerald-950 border border-emerald-800 rounded-2xl p-4 w-full max-w-xs text-center shadow-md relative">
+                  <div className="bg-emerald-950 border border-emerald-800 rounded-2xl p-5 w-full max-w-xs text-center shadow-md relative flex flex-col items-center">
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-800 text-white text-[9px] font-black uppercase tracking-widest px-3 py-0.5 rounded-full">
                       Setiausaha
                     </div>
-                    <span className="font-bold text-sm text-slate-100 block mt-1">
+                    {/* Gambar Profil Setiausaha */}
+                    <div className="w-16 h-16 rounded-full border-2 border-emerald-600 overflow-hidden mb-3 bg-slate-800 shadow-md">
+                      <img 
+                        src={streamDetails[selectedStream].structure.setiausaha.avatar} 
+                        alt={streamDetails[selectedStream].structure.setiausaha.nama}
+                        className="w-full h-full object-cover object-top"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      <div className="hidden w-full h-full flex items-center justify-center text-slate-400 bg-slate-800">
+                        <User className="h-6 w-6" />
+                      </div>
+                    </div>
+                    <span className="font-bold text-sm text-slate-100 block">
                       {streamDetails[selectedStream].structure.setiausaha.nama}
                     </span>
                     <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block mt-0.5">
@@ -544,16 +652,28 @@ function App() {
 
                   {/* Anggota Jawatankuasa Grid */}
                   <div className="w-full">
-                    <div className="text-center mb-4">
+                    <div className="text-center mb-6">
                       <span className="text-[10px] bg-slate-100 text-slate-500 font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-slate-200/50">
                         Jawatankuasa Pelaksana
                       </span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                       {streamDetails[selectedStream].structure.jawatankuasa.map((jk, i) => (
-                        <div key={i} className="bg-white border border-slate-200 p-4 rounded-xl flex items-center space-x-3 shadow-sm hover:border-amber-500 transition-colors">
-                          <div className="bg-slate-100 p-2.5 rounded-xl text-slate-600">
-                            <User className="h-4 w-4" />
+                        <div key={i} className="bg-white border border-slate-200 p-4 rounded-2xl flex items-center space-x-4 shadow-sm hover:border-amber-500 hover:shadow-md transition-all duration-300">
+                          {/* Gambar Profil Ahli Jawatankuasa */}
+                          <div className="w-12 h-12 rounded-full border border-slate-200 overflow-hidden shrink-0 bg-slate-50 shadow-inner">
+                            <img 
+                              src={jk.avatar} 
+                              alt={jk.nama}
+                              className="w-full h-full object-cover object-top"
+                              onError={(e) => {
+                                e.target.style.display = 'none';
+                                e.target.nextSibling.style.display = 'flex';
+                              }}
+                            />
+                            <div className="hidden w-full h-full flex items-center justify-center text-slate-400 bg-slate-100">
+                              <User className="h-4 w-4" />
+                            </div>
                           </div>
                           <div>
                             <span className="font-bold text-xs text-slate-950 block">{jk.nama}</span>
