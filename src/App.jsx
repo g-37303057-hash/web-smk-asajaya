@@ -3,7 +3,8 @@ import {
   Menu, X, BookOpen, Users, Award, Calendar, 
   ArrowRight, Phone, Mail, MapPin, ChevronRight, 
   GraduationCap, ShieldCheck, Heart, ExternalLink,
-  Sparkles, Quote, Trophy, Clock, CheckCircle2, Send
+  Sparkles, Quote, Trophy, Clock, CheckCircle2, Send,
+  User, Check, Layers, Image as ImageIcon
 } from 'lucide-react';
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
   const [emailSubscribed, setEmailSubscribed] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState('');
+  
+  // State untuk mengurus aliran persekolahan yang dipilih (Modal)
+  const [selectedStream, setSelectedStream] = useState(null);
 
   // Kesan tatalan untuk bar navigasi yang dinamik & minimalis
   useEffect(() => {
@@ -70,6 +74,71 @@ function App() {
     }
   ];
 
+  // Data Spesifik Aliran Persekolahan (Perdana, Pra-U, PPKI)
+  const streamDetails = {
+    perdana: {
+      title: "Arus Perdana",
+      sub: "Tingkatan 1 hingga Tingkatan 5",
+      desc: "Menyediakan pendidikan standard berkualiti tinggi berpandukan Kurikulum Standard Sekolah Menengah (KSSM) merangkumi pakej SPM STEM A, STEM B, dan STEM C yang berdaya saing tinggi.",
+      motto: "Peneraju Ilmu & Kecemerlangan Akademik",
+      structure: {
+        penyelaras: { nama: "ISMAIL BIN AHMAD", jawatan: "Penolong Kanan Pentadbiran" },
+        setiausaha: { nama: "NURUL HAYATUL AZWA BINTI HJ BOLHASSAN", jawatan: "Setiausaha Kurikulum" },
+        jawatankuasa: [
+          { nama: "FAKHRUL RAZI BIN SUNIP", peranan: "Ketua Bidang Bahasa" },
+          { nama: "AWANG KAMARUDIN BIN AWANG JAPOT", peranan: "Ketua Bidang Sains & Matematik" },
+          { nama: "MASTURI BINTI TANI", peranan: "Ketua Bidang Kemanusiaan" },
+          { nama: "MOHD FAKRUL RADZI BIN ABU HASAN", peranan: "Ketua Bidang Teknikal & Vokasional" }
+        ]
+      },
+      images: [
+        { url: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800", caption: "Bilik Darjah Pembelajaran Abad Ke-21 (PAK21)" },
+        { url: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800", caption: "Sesi Eksperimen Amali di Makmal Kimia Sekolah" },
+        { url: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800", caption: "Penerapan Pembelajaran Kolaboratif Kumpulan" }
+      ]
+    },
+    prau: {
+      title: "Aliran Pra-Universiti",
+      sub: "Tingkatan 6 (Sains & Sastera)",
+      desc: "Mempersiapkan pelajar lepasan SPM untuk melangkah ke institusi pengajian tinggi melalui peperiksaan Sijil Tinggi Persekolahan Malaysia (STPM) dengan bimbingan pensyarah berpengalaman.",
+      motto: "Gerbang Emas Menuju Menara Gading",
+      structure: {
+        penyelaras: { nama: "Cikgu Dr. Hajah Noraini binti Ahmad", jawatan: "Penyelaras Tingkatan 6" },
+        setiausaha: { nama: "Cikgu Wong Siew Ling", jawatan: "Setiausaha Peperiksaan STPM" },
+        jawatankuasa: [
+          { nama: "Cikgu Abang Zulkifli bin Abang Ismail", peranan: "Ketua Unit Hal Ehwal Murid (HEM)" },
+          { nama: "Cikgu Sarimah binti Bujang", peranan: "Ketua Unit Kokurikulum Tingkatan 6" },
+          { nama: "Cikgu Tan Kok Wee", peranan: "Ketua Unit Kerja Kursus & Penyelidikan" }
+        ]
+      },
+      images: [
+        { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=800", caption: "Dewan Kuliah & Sesi Pembentangan Akademik" },
+        { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800", caption: "Kajian Lapangan Kerja Kursus Geografi & Sejarah" },
+        { url: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800", caption: "Majlis Graduasi Pra-Universiti SMK Asajaya" }
+      ]
+    },
+    ppki: {
+      title: "Program Pendidikan Khas Integrasi",
+      sub: "PPKI Asajaya",
+      desc: "Menyediakan sokongan dan rancangan pendidikan berorientasikan kemahiran hidup dan pengurusan kendiri bagi membolehkan murid berkeperluan pendidikan khas (MBPK) berdikari.",
+      motto: "Keupayaan Di Sebalik Kelainan",
+      structure: {
+        penyelaras: { nama: "Cikgu Fatimah binti Ibrahim", jawatan: "Penyelaras Utama PPKI" },
+        setiausaha: { nama: "Cikgu Mohd Syazwan bin Hadi", jawatan: "Setiausaha Kebajikan MBPK" },
+        jawatankuasa: [
+          { nama: "Cikgu Siti Aminah binti Yusuf", peranan: "Penyelia Bengkel Kemahiran Hidup" },
+          { nama: "Puan Catherine anak Jamil", peranan: "Pembantu Pengurusan Murid (PPM)" },
+          { nama: "Puan Norizan binti Seman", peranan: "Pembantu Pengurusan Murid (PPM)" }
+        ]
+      },
+      images: [
+        { url: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800", caption: "Sesi Pembelajaran Terapi Seni & Motor Kasar" },
+        { url: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=800", caption: "Projek Kebun Integrasi & Keusahawanan Tani PPKI" },
+        { url: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800", caption: "Latihan Kemahiran Memasak & Pengurusan Domestik" }
+      ]
+    }
+  };
+
   const filteredAnnouncements = activeTab === 'semua' 
     ? announcements 
     : announcements.filter(item => item.category === activeTab);
@@ -110,7 +179,7 @@ function App() {
               </div>
             </div>
 
-            {/* Navigasi Utama Skrin Besar - Diperbaiki menggunakan pautan manual */}
+            {/* Navigasi Utama Skrin Besar */}
             <div className="hidden lg:flex items-center space-x-8">
               <a href="#utama" className="text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-amber-400 transition-colors duration-200 relative py-1">Utama</a>
               <a href="#profil" className="text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-amber-400 transition-colors duration-200 relative py-1">Profil</a>
@@ -136,7 +205,7 @@ function App() {
           </div>
         </div>
 
-        {/* Menu Mobil Terbuka - Diperbaiki menggunakan pautan manual */}
+        {/* Menu Mobil Terbuka */}
         {isMenuOpen && (
           <div className="lg:hidden bg-slate-950/98 backdrop-blur-xl border-t border-slate-900 px-6 pt-4 pb-8 space-y-3 shadow-2xl">
             <a href="#utama" onClick={() => setIsMenuOpen(false)} className="block py-3 px-4 text-slate-300 hover:bg-slate-900 hover:text-amber-400 text-sm font-bold uppercase tracking-wider rounded-xl transition duration-200">Utama</a>
@@ -189,7 +258,6 @@ function App() {
                 <span>Profil Korporat</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
-              {/* Diperbaiki href di bawah menjadi huruf kecil #berita */}
               <a href="#berita" className="bg-slate-900/60 hover:bg-slate-900 text-slate-300 px-8 py-4 rounded-2xl text-xs font-bold uppercase tracking-wider border border-slate-800 hover:border-slate-700 transition-all duration-300 text-center backdrop-blur-sm">
                 Berita & Makluman
               </a>
@@ -257,6 +325,7 @@ function App() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
           {/* Kad Visi */}
           <div className="group bg-white rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100/80 flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-bl-full pointer-events-none"></div>
@@ -310,6 +379,237 @@ function App() {
         </div>
       </section>
 
+      {/* SEKSYEN BAHARU: ALIRAN PERSEKOLAHAN (PERDANA, PRA-U, PPKI) INTERAKTIF */}
+      <section className="py-24 bg-slate-100/60 border-t border-slate-200/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center space-x-1.5 bg-amber-50 border border-amber-200 px-3.5 py-1.5 rounded-full text-[10px] text-amber-800 font-bold uppercase tracking-widest mb-3">
+              <Layers className="h-3.5 w-3.5" />
+              <span>Struktur Pengajian</span>
+            </div>
+            <h2 className="text-3xl font-black text-slate-950 sm:text-4xl leading-tight">
+              Aliran Persekolahan SMK Asajaya
+            </h2>
+            <p className="text-sm text-slate-500 mt-3 font-light">
+              Klik pada mana-mana aliran di bawah untuk meneroka **Carta Organisasi Jawatankuasa** serta galeri gambar aktiviti masing-masing.
+            </p>
+            <div className="h-1 w-12 bg-emerald-800 mx-auto mt-4 rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            {/* 1. KAD ALIRAN PERDANA */}
+            <div 
+              onClick={() => setSelectedStream('perdana')}
+              className="group bg-white rounded-3xl p-8 border border-slate-200/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+            >
+              <div className="space-y-6">
+                <div className="bg-emerald-50 text-emerald-800 p-4 rounded-2xl w-fit group-hover:bg-emerald-800 group-hover:text-white transition-all duration-300">
+                  <GraduationCap className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-950 group-hover:text-emerald-800 transition-colors">Arus Perdana</h3>
+                  <p className="text-xs text-amber-600 font-bold uppercase tracking-widest mt-1">Tingkatan 1 - Tingkatan 5</p>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed font-light line-clamp-3">
+                  Menawarkan kurikulum perdana KSSM merangkumi pakej SPM STEM A, STEM B, dan STEM C yang berdaya saing tinggi.
+                </p>
+              </div>
+              <div className="pt-8 flex items-center justify-between text-xs font-bold text-emerald-800 uppercase tracking-widest">
+                <span>Teroka Carta & Galeri</span>
+                <ChevronRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            {/* 2. KAD ALIRAN PRA-U */}
+            <div 
+              onClick={() => setSelectedStream('prau')}
+              className="group bg-white rounded-3xl p-8 border border-slate-200/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+            >
+              <div className="space-y-6">
+                <div className="bg-amber-50 text-amber-600 p-4 rounded-2xl w-fit group-hover:bg-amber-600 group-hover:text-slate-950 transition-all duration-300">
+                  <Award className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-500 transition-colors">Pra-Universiti</h3>
+                  <p className="text-xs text-amber-600 font-bold uppercase tracking-widest mt-1">Tingkatan 6 (Sastera)</p>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed font-light line-clamp-3">
+                  Persediaan mantap ke peringkat menara gading berlandaskan sistem modular peperiksaan STPM dan modul kokurikulum yang berimpak tinggi.
+                </p>
+              </div>
+              <div className="pt-8 flex items-center justify-between text-xs font-bold text-emerald-800 uppercase tracking-widest">
+                <span>Teroka Carta & Galeri</span>
+                <ChevronRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            {/* 3. KAD PPKI */}
+            <div 
+              onClick={() => setSelectedStream('ppki')}
+              className="group bg-white rounded-3xl p-8 border border-slate-200/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+            >
+              <div className="space-y-6">
+                <div className="bg-slate-50 text-slate-700 p-4 rounded-2xl w-fit group-hover:bg-slate-950 group-hover:text-white transition-all duration-300">
+                  <Heart className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-950 group-hover:text-emerald-800 transition-colors">Program Pendidikan Khas (PPKI)</h3>
+                  <p className="text-xs text-amber-600 font-bold uppercase tracking-widest mt-1">Pendidikan Khas Integrasi</p>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed font-light line-clamp-3">
+                  Peneraju sokongan holo-terapeutik dan program keusahawanan bakeri berciri inklusif bagi mendidik murid berkeperluan khas secara kendiri.
+                </p>
+              </div>
+              <div className="pt-8 flex items-center justify-between text-xs font-bold text-emerald-800 uppercase tracking-widest">
+                <span>Teroka Carta & Galeri</span>
+                <ChevronRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* MODAL INTERAKTIF: CARTA ORGANISASI & GALERI ALIRAN */}
+      {selectedStream && (
+        <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md">
+          <div className="relative bg-white rounded-3xl max-w-4xl w-full shadow-2xl overflow-hidden border border-slate-200/80 animate-in fade-in zoom-in-95 duration-300">
+            
+            {/* Modal Header */}
+            <div className="bg-slate-950 text-white p-6 sm:p-8 border-b border-slate-900 flex justify-between items-start">
+              <div>
+                <span className="text-xs text-amber-400 font-bold uppercase tracking-wider block mb-1">Pusat Maklumat Aliran</span>
+                <h3 className="text-2xl sm:text-3xl font-black text-white">{streamDetails[selectedStream].title}</h3>
+                <p className="text-xs text-slate-400 font-medium mt-1 italic">"{streamDetails[selectedStream].motto}"</p>
+              </div>
+              <button 
+                onClick={() => setSelectedStream(null)}
+                className="bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white p-2 rounded-xl border border-slate-800 transition-colors focus:outline-none"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-6 sm:p-8 overflow-y-auto max-h-[70vh] space-y-10">
+              
+              {/* Penerangan Ringkas */}
+              <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200/50">
+                <p className="text-slate-600 text-sm leading-relaxed font-light">
+                  {streamDetails[selectedStream].desc}
+                </p>
+              </div>
+
+              {/* Carta Organisasi Visual (HTML & CSS) */}
+              <div className="space-y-6">
+                <div className="flex items-center space-x-2 text-slate-950 border-b border-slate-100 pb-3">
+                  <Users className="h-5 w-5 text-emerald-800" />
+                  <h4 className="font-bold text-base uppercase tracking-wider">Carta Organisasi Pengurusan</h4>
+                </div>
+
+                <div className="flex flex-col items-center space-y-6 pt-4">
+                  
+                  {/* Penyelaras (Peringkat Teratas) */}
+                  <div className="bg-slate-950 border-2 border-amber-500 rounded-2xl p-4 w-full max-w-xs text-center shadow-lg relative">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-slate-950 text-[9px] font-black uppercase tracking-widest px-3 py-0.5 rounded-full">
+                      Penyelaras
+                    </div>
+                    <span className="font-extrabold text-sm text-slate-100 block mt-1">
+                      {streamDetails[selectedStream].structure.penyelaras.nama}
+                    </span>
+                    <span className="text-[10px] text-amber-500 font-bold uppercase tracking-wider block mt-0.5">
+                      {streamDetails[selectedStream].structure.penyelaras.jawatan}
+                    </span>
+                  </div>
+
+                  {/* Garis Penghubung Tengah */}
+                  <div className="h-6 w-0.5 bg-slate-200"></div>
+
+                  {/* Setiausaha */}
+                  <div className="bg-emerald-950 border border-emerald-800 rounded-2xl p-4 w-full max-w-xs text-center shadow-md relative">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-800 text-white text-[9px] font-black uppercase tracking-widest px-3 py-0.5 rounded-full">
+                      Setiausaha
+                    </div>
+                    <span className="font-bold text-sm text-slate-100 block mt-1">
+                      {streamDetails[selectedStream].structure.setiausaha.nama}
+                    </span>
+                    <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block mt-0.5">
+                      {streamDetails[selectedStream].structure.setiausaha.jawatan}
+                    </span>
+                  </div>
+
+                  <div className="h-6 w-0.5 bg-slate-200"></div>
+
+                  {/* Anggota Jawatankuasa Grid */}
+                  <div className="w-full">
+                    <div className="text-center mb-4">
+                      <span className="text-[10px] bg-slate-100 text-slate-500 font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-slate-200/50">
+                        Jawatankuasa Pelaksana
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                      {streamDetails[selectedStream].structure.jawatankuasa.map((jk, i) => (
+                        <div key={i} className="bg-white border border-slate-200 p-4 rounded-xl flex items-center space-x-3 shadow-sm hover:border-amber-500 transition-colors">
+                          <div className="bg-slate-100 p-2.5 rounded-xl text-slate-600">
+                            <User className="h-4 w-4" />
+                          </div>
+                          <div>
+                            <span className="font-bold text-xs text-slate-950 block">{jk.nama}</span>
+                            <span className="text-[9px] text-slate-400 font-semibold uppercase tracking-wider block mt-0.5">{jk.peranan}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Galeri Gambar Aktiviti Terkini */}
+              <div className="space-y-6 pt-4">
+                <div className="flex items-center space-x-2 text-slate-950 border-b border-slate-100 pb-3">
+                  <ImageIcon className="h-5 w-5 text-emerald-800" />
+                  <h4 className="font-bold text-base uppercase tracking-wider">Galeri Gambar & Aktiviti</h4>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                  {streamDetails[selectedStream].images.map((img, i) => (
+                    <div key={i} className="group overflow-hidden rounded-2xl bg-slate-900 border border-slate-200 shadow-sm">
+                      <div className="h-40 overflow-hidden relative">
+                        <img 
+                          src={img.url} 
+                          alt={img.caption} 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4 bg-white border-t border-slate-100">
+                        <p className="text-xs text-slate-600 font-medium leading-relaxed">
+                          {img.caption}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Modal Footer */}
+            <div className="bg-slate-50 px-8 py-4 border-t border-slate-100 flex justify-end">
+              <button 
+                onClick={() => setSelectedStream(null)}
+                className="bg-slate-950 hover:bg-slate-900 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl transition shadow-md active:scale-95"
+              >
+                Tutup Maklumat
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
+
       {/* 5. SECTION PERUTUSAN PENGETUA - Editorial Portrait Layout */}
       <section id="perutusan" className="py-24 bg-slate-950 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff02_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
@@ -319,7 +619,7 @@ function App() {
           {/* Potret Pengetua Premium */}
           <div className="lg:col-span-5 relative max-w-sm mx-auto w-full">
             <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 to-transparent rounded-2xl transform rotate-3 scale-102 opacity-30 blur-sm"></div>
-            <div className="relative bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
+            <div className="relative bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800">
               <img 
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
                 alt="Pengetua SMK Asajaya" 
@@ -365,7 +665,7 @@ function App() {
         </div>
       </section>
 
-      {/* 6. SECTION PENGUMUMAN & BERITA - Diperbaiki ID menjadi id="berita" */}
+      {/* 6. SECTION PENGUMUMAN & BERITA */}
       <section id="berita" className="bg-white py-24 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -377,7 +677,7 @@ function App() {
               <div className="h-1 w-12 bg-amber-500 mt-3 rounded-full mx-auto md:mx-0"></div>
             </div>
             
-            {/* Penapis Berita (Tabs) */}
+            {/* Penapis Berita (Tabs) - Minimalist Outlines */}
             <div className="flex flex-wrap gap-1.5 mt-8 md:mt-0 justify-center">
               {['semua', 'akademik', 'kokurikulum', 'pembangunan'].map((tab) => (
                 <button
@@ -441,7 +741,7 @@ function App() {
         </div>
       </section>
 
-      {/* 7. SECTION INTERAKTIF NEWSLETTER */}
+      {/* 7. SECTION INTERAKTIF NEWSLETTER - Premium Contrast Section */}
       <section className="bg-slate-950 text-white py-20 border-t border-slate-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <div className="inline-flex items-center space-x-1.5 bg-amber-500/10 px-3 py-1 rounded-full text-[9px] text-amber-500 font-black uppercase tracking-widest mb-2">
@@ -534,7 +834,7 @@ function App() {
 
         </div>
 
-        {/* Hak Cipta - Diperbaiki kod yang terpotong */}
+        {/* Hak Cipta */}
         <div className="bg-slate-950 border-t border-slate-900/60 py-8 text-center text-[10px] text-slate-500 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p>© {new Date().getFullYear()} SMK Asajaya. Hak Cipta Terpelihara.</p>
           <p className="flex items-center space-x-1">
