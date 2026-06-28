@@ -372,7 +372,7 @@ function App() {
               { label: "Jumlah Pelajar", value: "1,200+", sub: "Tingkatan 1 - 6", color: "text-slate-950" },
               { label: "Tenaga Pengajar", value: "90+", sub: "Pendidik Berdedikasi", color: "text-slate-950" },
               { label: "Aliran Persekolahan", value: "3 Kategori", sub: "Perdana | Pra-U | PPKI", color: "text-slate-950" },
-              { label: "Pencapaian SPM", value: "2025", sub: "5.30", color: "text-emerald-700" }
+              { label: "SPM | STPM", value: " GPS 2025", sub: "5.30 | 3.02", color: "text-emerald-700" }
             ].map((stat, i) => (
               <div key={i} className="flex flex-col items-center text-center p-2 first:pt-2 sm:pt-2">
                 <span className={`text-3xl font-black ${stat.color} tracking-tight`}>
