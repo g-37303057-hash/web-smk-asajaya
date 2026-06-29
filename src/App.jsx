@@ -741,7 +741,7 @@ function App() {
             <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 to-transparent rounded-2xl transform rotate-3 scale-102 opacity-30 blur-sm"></div>
             <div className="relative bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
+                src="/Profile pic Pengetua.jpeg" 
                 alt="Pengetua SMK Asajaya" 
                 className="w-full h-[400px] object-cover opacity-90 object-top hover:scale-101 transition duration-300"
               />
