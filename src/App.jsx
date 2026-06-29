@@ -232,7 +232,7 @@ function App() {
             <div className="flex items-center space-x-3.5 group cursor-pointer">
               <div className="relative w-12 h-12 bg-gradient-to-br from-slate-900 to-slate-800 p-1 rounded-2xl border border-slate-700 shadow-lg shadow-amber-500/5 transition-transform duration-500 group-hover:scale-105 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/logo-smk-asajaya.png" 
+                  src="/Logo SMK Asajaya Transparent.png" 
                   alt="Logo SMK Asajaya" 
                   className="w-full h-full object-contain"
                   onError={(e) => {
@@ -347,8 +347,8 @@ function App() {
             <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 to-emerald-600/10 rounded-3xl transform rotate-2 scale-102 opacity-40 blur-sm"></div>
             <div className="relative bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800">
               <img 
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800" 
-                alt="Suasana Pendidikan SMK Asajaya" 
+                src="/Suasana sekolah.jpeg" 
+                alt="We Love SMK Asajaya" 
                 className="w-full h-80 md:h-96 object-cover opacity-85 hover:scale-103 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
